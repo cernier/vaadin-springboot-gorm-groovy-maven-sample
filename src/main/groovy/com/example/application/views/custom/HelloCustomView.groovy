@@ -2,6 +2,7 @@ package com.example.application.views.custom
 
 import org.springframework.beans.factory.annotation.Autowired
 
+import com.example.application.model.HelloBean
 import com.example.application.services.HelloService
 import com.example.application.views.MainLayout
 import com.vaadin.flow.component.button.Button
@@ -32,7 +33,8 @@ public class HelloCustomView extends HorizontalLayout {
         add(name, sayHello)
         setVerticalComponentAlignment(Alignment.END, name, sayHello)
         sayHello.addClickListener({ e ->
-            Notification.show(service.getHello(name.getValue()))
+            HelloBean helloBean = service.getHelloBean(name.getValue())
+            Notification.show("${helloBean.helloNumber} : ${helloBean.helloField}")
         })
     }
 }

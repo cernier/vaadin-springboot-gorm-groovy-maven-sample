@@ -39,6 +39,13 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>grails</id>
+            <url>https://repo.grails.org/grails/core</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <pluginRepositories>
@@ -83,6 +90,12 @@
             <groupId>org.vaadin.artur</groupId>
             <artifactId>a-vaadin-helper</artifactId>
             <version>1.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.grails</groupId>
+            <artifactId>gorm-hibernate5-spring-boot</artifactId>
+            <version>7.1.0.M5</version>
         </dependency>
 
         <dependency>
