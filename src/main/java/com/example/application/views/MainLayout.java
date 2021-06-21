@@ -23,6 +23,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.example.application.views.MainLayout;
 import com.example.application.views.helloworld.HelloWorldView;
 import com.example.application.views.about.AboutView;
+import com.example.application.views.custom.HelloCustomView;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -82,7 +83,7 @@ public class MainLayout extends AppLayout {
     }
 
     private Component[] createMenuItems() {
-        return new Tab[]{createTab("Hello World", HelloWorldView.class), createTab("About", AboutView.class)};
+        return new Tab[]{createTab("Hello World", HelloWorldView.class), createTab("Hello Custom", HelloCustomView.class), createTab("About", AboutView.class)};
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {
