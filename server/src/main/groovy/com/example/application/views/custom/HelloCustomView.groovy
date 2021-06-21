@@ -33,8 +33,9 @@ public class HelloCustomView extends HorizontalLayout {
         add(name, sayHello)
         setVerticalComponentAlignment(Alignment.END, name, sayHello)
         sayHello.addClickListener({ e ->
-            HelloBean helloBean = service.getHelloBean(name.getValue())
-            Notification.show("${helloBean.helloNumber} : ${helloBean.helloField}")
+            service.customSearchHelloBeans(name.getValue()).each { HelloBean helloBean ->
+                Notification.show("${helloBean.helloNumber} : ${helloBean.helloField}")
+            }
         })
     }
 }
